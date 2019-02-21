@@ -26,7 +26,7 @@ export class FavoritosProvider {
     if(index > -1){
       this.favoritos.splice(index,1)  //eliminar en ese lugar 1 solo elemento
       const toast = this.toastCtrl.create({
-        message: 'Casa eliminada de favoritos',
+        message: 'Eliminado de favoritos',
         duration: 3000,
         position: 'top'
       });
@@ -45,8 +45,8 @@ export class FavoritosProvider {
   addFavoritos(mascota){
     this.favoritos.push(mascota);
     const toast = this.toastCtrl.create({
-      message: 'Casa agregada a favoritos',
-      duration: 3000,
+      message: 'Agregada a favoritos',
+      duration: 2000,
       position: 'top'
     });
     toast.present();

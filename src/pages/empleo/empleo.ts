@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { EmpleosMostrarPage } from '../empleos-mostrar/empleos-mostrar';
+import { BuscarPage } from '../buscar/buscar';
 
 /**
  * Generated class for the EmpleoPage page.
@@ -19,6 +20,7 @@ export class EmpleoPage {
 
   empleos=[];
   empleoPage=EmpleosMostrarPage;
+  buscarP=BuscarPage;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
@@ -41,6 +43,10 @@ export class EmpleoPage {
     console.log('Hola');
     this.navCtrl.push(this.empleoPage, {empleo:empleo});
 
+  }
+
+  buscar(){
+    this.navCtrl.push(this.buscarP, {mascotas:this.empleos})
   }
 
 }

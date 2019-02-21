@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { VideojuegosMostrarPage } from '../videojuegos-mostrar/videojuegos-mostrar';
+import { BuscarPage } from '../buscar/buscar';
 
 /**
  * Generated class for the VideojuegosPage page.
@@ -19,6 +20,7 @@ export class VideojuegosPage {
 
   videos=[];
   videoPage = VideojuegosMostrarPage;
+  buscarP=BuscarPage;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
@@ -40,6 +42,10 @@ export class VideojuegosPage {
 
   verVideo(video){
     this.navCtrl.push(this.videoPage, {video:video});
+  }
+
+  buscar(){
+    this.navCtrl.push(this.buscarP, {mascotas:this.videos})
   }
 
 }

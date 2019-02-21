@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MascotaPage } from '../mascota/mascota';
+import { FavoritosProvider } from '../../providers/favoritos/favoritos';
 
 /**
  * Generated class for the FavoritosPPage page.
@@ -14,12 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'favoritos-p.html',
 })
 export class FavoritosPPage {
+  items=[];
+  mascotaPage=MascotaPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fav:FavoritosProvider) {
+  this.items=this.fav.getFavoritos();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavoritosPPage');
+  }
+  
+  verMascota(mascota){
+    this.navCtrl.push(this.mascotaPage, {mascota:mascota})
   }
 
 }

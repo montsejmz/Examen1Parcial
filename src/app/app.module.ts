@@ -15,6 +15,7 @@ import { EmpleosMostrarPage } from '../pages/empleos-mostrar/empleos-mostrar';
 import { VideojuegosMostrarPage } from '../pages/videojuegos-mostrar/videojuegos-mostrar';
 import { BuscarPage } from '../pages/buscar/buscar';
 import { FavoritosProvider } from '../providers/favoritos/favoritos';
+import { FavoritosPPage } from '../pages/favoritos-p/favoritos-p';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     TabsPage,
     EmpleosMostrarPage,
     VideojuegosMostrarPage,
-    BuscarPage
+    BuscarPage,
+    FavoritosPPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { FavoritosProvider } from '../providers/favoritos/favoritos';
     TabsPage,
     EmpleosMostrarPage,
     VideojuegosMostrarPage,
-    BuscarPage
+    BuscarPage,
+    FavoritosPPage
   ],
   providers: [
     StatusBar,
